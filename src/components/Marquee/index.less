@@ -1,0 +1,38 @@
+.marquee{
+  display: flex;
+  white-space: nowrap;
+  width: 80px;
+  overflow: hidden;
+  position: relative;
+  .content{
+    display: flex;
+    animation: Marquee 10s linear infinite;
+    
+  }
+  .overlay{
+    height: 100%;
+    position: absolute;
+    top: 0;
+  }
+  .leftOverlay{
+    left: 0;
+  }
+  .rightOverlay{
+    right: 0;
+  }
+}
+
+.pauseOnHover:hover{
+  .content{
+    animation-play-state: paused;
+  }
+}
+
+@keyframes Marquee{
+  0%{
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(-100%);
+  }
+}
