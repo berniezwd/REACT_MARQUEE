@@ -9,21 +9,32 @@ import logo5 from "./assets/imgs/5.png";
 import logo6 from "./assets/imgs/6.png";
 import logo7 from "./assets/imgs/7.png";
 
+const imgLists = Object.freeze([
+  logo1,
+  logo2,
+  logo3,
+  logo4,
+  logo5,
+  logo6,
+  logo7,
+]);
+const textLists = Object.freeze([
+  "你好世界",
+  "Hello World",
+  "Ciao mondo",
+  "こんにちは世",
+  "헬로 월드",
+  "Hello Mundo",
+  "བོད་སྐད།或བོད་ཀྱི་སྐད་ཡིག།",
+]);
+
 function App() {
-  const imgLists = [logo1, logo2, logo3, logo4, logo5, logo6, logo7];
-  const textLists = [
-    "你好世界",
-    "Hello World",
-    "Ciao mondo",
-    "こんにちは世",
-    "헬로 월드",
-    "Hello Mundo",
-    "བོད་སྐད།或བོད་ཀྱི་སྐད་ཡིག།",
-  ];
   return (
-    <div className="app-wrapper">
-      <h1>React Marquee</h1>
-      <p>一款轻量级的跑马灯组件</p>
+    <div className="app-wrapper flex flex-column justify-center">
+      <div className="flex flex-column justify-center">
+        <h1>React Marquee</h1>
+        <p>一款轻量级的跑马灯组件</p>
+      </div>
       <h2>鸣谢</h2>
       <Marquee
         className="Outsize"
@@ -44,7 +55,6 @@ function App() {
         gradientColor="#F8FBFD"
         pauseOnHover
         startPlay
-        speed={80}
       >
         <div className="wrapper">
           {textLists.map((item: string, index: number) => {
